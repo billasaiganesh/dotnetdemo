@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dotnetimagenew 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetimagenew
+  template:
+    metadata:
+      labels:
+        app: dotnetimagenew 
+    spec:
+      containers:
+        - name: dotnetimagenew 
+          image: containerregistryazureapp.azurecr.io/dotnetimagenew
+          ports:
+          - containerPort: 5000
